@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS reviewers (
 );
 
 CREATE TABLE IF NOT EXISTS reviews (
-    id INTEGER PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     url TEXT,
     reviewerId INTEGER REFERENCES reviewers(id),
     albumId INTEGER REFERENCES albums(id),
@@ -21,3 +21,9 @@ CREATE TABLE IF NOT EXISTS reviews (
     score FLOAT,
     is_best_music BOOLEAN
 );
+
+-- DROP TABLE album;
+
+-- DROP TABLE reviewers;
+
+-- DROP TABLE reviews;
