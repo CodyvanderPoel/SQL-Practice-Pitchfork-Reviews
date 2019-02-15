@@ -10,7 +10,7 @@ for review in reviews:
     album = review['album']
     album_id = db.query_file('./insert_album.sql', **album).first().id
     reviewer = review['author']
-    reviewer_id = db.query_file('./insert_reviewer.sql', username=reviewer['name'], ).first().id
+    reviewer_id = db.query_file('./insert_reviewer.sql', **reviewer ).first().id
     idn = review['id']
     url = review['url']
     date = review['date']
@@ -25,10 +25,10 @@ for review in reviews:
 
     db.query_file(
         "insert_review.sql",
-        id=idn,
         url=url,
-        reviewer_id=reviewer_id,
-        album_id=album_id,
+        reviewerId=reviewer_id,
+        albumId=album_id,
         release_date=release_date,
         score=score,
-        is_best_music=ibm)
+        is_best_music=ibm
+        )
