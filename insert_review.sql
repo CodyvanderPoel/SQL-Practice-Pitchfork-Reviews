@@ -1,5 +1,4 @@
 INSERT INTO reviews (
-    id,
     url,
     reviewerId,
     albumId,
@@ -8,7 +7,6 @@ INSERT INTO reviews (
     is_best_music
 )
 VALUES (
-    :id,
     :url,
     :reviewerId,
     :albumId,
